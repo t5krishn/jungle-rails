@@ -4,6 +4,14 @@
     <h1>My Cart</h1>
   </header>
 
+  
+  <% if enhanced_cart.length == 0 %>
+    <div class="alert alert-danger">
+      <h3><strong>Your cart is empty!</strong></h3>
+      <p>Go find some items to add to your cart...</p>
+      <a href="/">Home page</a>
+    </div>
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -31,7 +39,6 @@
       </tfoot>
     </table>
   </div>
-
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -48,5 +55,8 @@
       <% end %>
     </div>
   </div>
+  <% end %>
+  
+
 
 </section>
